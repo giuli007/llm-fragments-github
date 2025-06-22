@@ -241,9 +241,9 @@ def _to_markdown(
         md_parts.append(issue["body"])
 
     if comments:
-        md_parts.append("---")
+        md_parts.append("## Comments")
         for c in comments:
-            md_parts.append(f"### Comment by @{c['user']['login']}")
+            md_parts.append(f"#### Comment by @{c['user']['login']}")
             if c.get("body"):
                 md_parts.append(c["body"])
             md_parts.append("---")

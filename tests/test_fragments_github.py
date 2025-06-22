@@ -36,10 +36,10 @@ def test_github_issue_loader(argument):
         "# Example issue\n\n"
         "*Posted by @simonw*\n\n"
         "Has a description.\n\n"
-        "---\n\n"
-        "### Comment by @simonw\n\n"
+        "## Comments\n\n"
+        "#### Comment by @simonw\n\n"
         "Comment 1.\n\n"
-        "---\n\n### Comment by @simonw\n\n"
+        "---\n\n#### Comment by @simonw\n\n"
         "Comment 2.\n\n"
         "---\n"
     )
@@ -74,7 +74,7 @@ def test_github_pr_loader(argument):
     )
     assert (
         str(fragments[0])
-        == "# Example PR\n\n*Posted by @simonw*\n\nThis is an example PR.\n\n---\n\n### Comment by @simonw\n\nIt has one comment.\n\n---\n"
+        == "# Example PR\n\n*Posted by @simonw*\n\nThis is an example PR.\n\n## Comments\n\n#### Comment by @simonw\n\nIt has one comment.\n\n---\n"
     )
     assert (
         fragments[1].source
@@ -111,8 +111,8 @@ def test_github_pr_loader_review_comments(argument):
         "# A test PR\n\n"
         "*Posted by @giuli007*\n\n"
         "PR test description\n\n"
-        "---\n\n"
-        "### Comment by @giuli007\n\n"
+        "## Comments\n\n"
+        "#### Comment by @giuli007\n\n"
         "Comment 1\n\n"
         "---\n\n"
         "## Review comments\n\n"
