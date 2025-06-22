@@ -22,7 +22,6 @@ def github_loader(argument: str) -> List[llm.Fragment]:
 
     Argument is a GitHub repository URL or username/repository
     """
-    # Normalize the repository argument
     if not argument.startswith(("http://", "https://")):
         # Assume format is username/repo
         repo_url = f"https://github.com/{argument}.git"
@@ -183,6 +182,8 @@ def _parse_argument(arg: str) -> Tuple[str, str, int]:
 
 
 def _github_client() -> httpx.Client:
+    # creates client
+    # and use token if set
     headers = {"Accept": "application/vnd.github+json"}
     token = os.getenv("GITHUB_TOKEN")
     if token:

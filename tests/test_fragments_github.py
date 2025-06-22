@@ -103,6 +103,7 @@ def test_github_issue_with_code_references(httpx_mock, monkeypatch):
 
     # 1) Mock the issue payload
     issue_api = f"https://api.github.com/repos/{owner}/{repo}/issues/{number}"
+    # the body
     issue_body = (
         "Here is some context.\n\n"
         "Check out this snippet:\n\n"
